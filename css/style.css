@@ -1,8 +1,8 @@
-#ajouter{
+.img-ajoute{
     width:3em;
     height:3em;
 }
-#ajouter:hover{
+.img-ajoute:hover{
     transform: scale(1.5);
     transition:0.3s;
 }
@@ -11,6 +11,12 @@
     border:none;
     cursor: pointer;
 }
-form{
-    
+.count{
+    display: flex;
+    justify-content: space-around;
+}
+.left{
+    background-image: url(/assets/imgs/stade.jpg);
+    width:38.5em;
+    height:60em;
 }
