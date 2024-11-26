@@ -4,9 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    
+    <section class="count">
+        <section class="right">
+            <button id="boutton-ajoute">
+                <img src="/assets/imgs/add.png" alt="player" id="ajouter">
+            </button>
+        </section>
+        <section class="left"></section>
+    </section>
+       <form >
+            <label>Nom et Prénom</label><br>
+            <input type="text" maxlength="15">
+            <label>photo</label><br>
+            <input type="file">
+            <label>positionner</label><br>
+            <select id="positions">
+                <optgroup>positionner de joueur</optgroup>
+                <option value="">GK</option>
+                <option value="">CB</option>
+                <option value="">LB</option>
+                <option value="">RB</option>
+                <option value="">CM</option>
+                <option value="">lF</option>
+                <option value="">RF</option>
+                <option value="">ST</option>
+            </select>
+            <section id="statistique">
+                <label>club</label><br>
+                <input type="text" maxlength="20">
+                <label>notation</label><br>
+                <input type="number" max="99">
+                <label>rythme</label><br>
+                <input type="number" max="99">
+                <label>tir</label><br>
+                <input type="number" max="99">
+                <label>passe</label><br>
+                <input type="number" max="99">
+                <label>dribble</label><br>
+                <input type="number" max="99">
+                <label>défense</label><br>
+                <input type="number" max="99">
+                <label>physique</label><br>
+            </section>
+
+       </form>
+    <script src="js/script.js"></script>
 </body>
 </html>
