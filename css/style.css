@@ -19,4 +19,30 @@
     background-image: url(/assets/imgs/stade.jpg);
     width:38.5em;
     height:60em;
+    display: grid;
 }
+#ajouter-gk{
+    justify-self: center;
+    margin: 6em 0em 0em 1em;
+}
+#defense{
+    justify-self: center;
+    margin: -6em;
+}
+#defense button{
+  padding:2em;
+}
+#mediane{
+    justify-self: center;
+    margin: -7.3em;
+}
+#mediane button{
+    padding:2em;
+  }
+  #attaque{
+    justify-self: center;
+    margin: -3.3em;
+  }
+  #attaque button{
+    padding:2em;
+  }
