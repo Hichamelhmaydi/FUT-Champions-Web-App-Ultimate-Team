@@ -53,3 +53,11 @@ body{
   #attaque button{
     padding:2em;
   }
+  .card-player img{
+    
+    width:150px;
+    height:200px;
+    position:absolute;
+    top: 45px;
+    left: 918px;
+  }
