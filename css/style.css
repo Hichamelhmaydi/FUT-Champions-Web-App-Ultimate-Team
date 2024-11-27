@@ -1,8 +1,28 @@
 body{
     background-image: url(/assets/imgs/background.jpg);
     background-size: cover;
-    
+    background-repeat: no-repeat; 
 }
+.show{
+    display:block;
+}
+.clos{
+    display:none;
+}
+form {
+    width: 26em;
+    height: 43em;
+    position: absolute;
+    top: 6em;
+    left: 25em;
+    padding-left: 144px;
+    background-image: url('/assets/imgs/form-back.jpg');
+    background-size: cover;
+    border-radius:3em;
+    box-shadow:0px 0px 36px 0px;
+    display:none;
+}
+
 .img-ajoute{
     width:3em;
     height:3em;
