@@ -73,6 +73,7 @@ form {
     width: 150px;
     height: 200px;
     display: inline-block;
+    cursor: pointer;
    
   }
   .card-player img{
