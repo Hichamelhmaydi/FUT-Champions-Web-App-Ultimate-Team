@@ -31,18 +31,35 @@ close.addEventListener("click", (e) => {
 });
 ajouteGk.addEventListener("click", (e) => {
             counPlay.style.display = 'block';
+            affCoun();
     });
 ajouteDeffUn.addEventListener("click", (e) => {
     counPlay.style.display = 'block';
+    affCoun();
 });
 ajouteDeffDeux.addEventListener("click", (e) => {
     counPlay.style.display = 'block';
+    affCoun();
 });
 ajouteDeffTrois.addEventListener("click", (e) => {
     counPlay.style.display = 'block';
+    affCoun();
 });
 ajouteDeffQuatre.addEventListener("click", (e) => {
     counPlay.style.display = 'block';
+    affCoun();
+});
+ajouteCentUn.addEventListener("click", (e) => {
+    counPlay.style.display = 'block';
+    affCoun();
+});
+ajouteCentDeux.addEventListener("click", (e) => {
+    counPlay.style.display = 'block';
+    affCoun();
+});
+ajouteCentTrois .addEventListener("click", (e) => {
+    counPlay.style.display = 'block';
+    affCoun();
 });
 ajouteRf.addEventListener("click", (e) => {
     counPlay.style.display = 'block';
@@ -59,11 +76,11 @@ ajouteSt.addEventListener("click", (e) => {
 
 ajoute.addEventListener("click", (e) => {
     counPlay.style.display = 'block';
+    affCoun();
     
 });
-function affCoun(){
-    const red=document.createElement('div');
-    red.innerHTML += `
+function affCoun() {
+    const htmlContent = `
        <div class="card-player">
           <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="joueur photo">
           <div class="post-total">
@@ -88,7 +105,8 @@ function affCoun(){
           </div>
        </div>
     `;
-    counPlay.appendChild(red);
+    counPlay.insertAdjacentHTML('beforeend', htmlContent);
+    
 }  
   
 })
