@@ -64,29 +64,29 @@ ajoute.addEventListener("click", (e) => {
 function affCoun(){
     const red=document.createElement('div');
     red.innerHTML += `
-        <div class="card-player">
-              <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="joueur photo">
-              <div class="post-total">
-                <span id="total-player">85</span><br>
-                <span id="position">RF</span>
-              </div>
-              <div class="flag-club">
-                <span class="flag">
-                    <img src="https://cdn.sofifa.net/flags/ar.png" >
-                </span>
-                <span class="club">
-                    <img src="https://cdn.sofifa.net/meta/team/239235/120.png" >
-                </span>
-              </div>
-              <div class="statistiques">
-                    <span class="statistique-un">rythme <br> <span class="rythme">99</span></span><br>
-                    <span class="statistique-deux">tir <br><span class="tir">99</span></span><br>
-                    <span class="statistique-trois">passe  <br><span class="passe">99</span></span><br>
-                    <span class="statistique-quatre">dribble <br><span class="dribble">99</span> </span><br>
-                    <span class="statistique-cinq">defense <br><span class="defense">99</span></span><br>
-                    <span class="statistique-six">physique<br><span class="physique">99</span></span><br>  
-              </div>
-        </div>
+       <div class="card-player">
+          <img src="https://cdn.sofifa.net/players/158/023/25_120.png" alt="joueur photo">
+          <div class="post-total">
+            <span id="total-player">85</span><br>
+            <span id="position">RF</span>
+          </div>
+          <div class="flag-club">
+            <span class="flag">
+                <img src="https://cdn.sofifa.net/flags/ar.png" >
+            </span>
+            <span class="club">
+                <img src="https://cdn.sofifa.net/meta/team/239235/120.png" >
+            </span>
+          </div>
+          <div class="statistiques">
+                <span class="statistique-un">rythme<span class="rythme">99</span></span>
+                <span class="statistique-deux">tir <span class="tir">99</span></span>
+                <span class="statistique-trois">passe <span class="passe">99</span></span><br>
+                <span class="statistique-quatre">dribble<span class="dribble">99</span> </span>
+                <span class="statistique-cinq">defense <span class="defense">99</span></span><br>
+                <span class="statistique-six">physique<span class="physique">99</span></span>
+          </div>
+       </div>
     `;
     counPlay.appendChild(red);
 }  

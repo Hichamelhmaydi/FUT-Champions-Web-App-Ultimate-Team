@@ -72,57 +72,36 @@ form {
     background-size:cover;
     width: 150px;
     height: 200px;
-    /* position: absolute;
+    position: absolute;
     top: 45px;
     left: 1109px;
-    display: none; */
   }
   .card-player img{
     width: 7em;
     height: 6em;
-    margin: 36px 0px 0px 33px;
+    margin-left: 33px;
+    margin-top: 36px;
   }
 .post-total{
-    position: absolute;
-    top: 54px;
-    left: 21px;
+  margin-top: -80px;
+  margin-left: 28px;
   }
   .flag-club{
-    position: absolute;
-    top: 75px;
+    margin-top: -26px;
+    margin-left: 19px;
   }
-  .flag-club img{
+  .flag-club span img{
     width: 17px;
     height: 15px;
-    margin: 23px -20px 0px 20px;
+    margin: 30px 0px 1px 1px;
   }
-  .statistiques span{
+  .statistiques span,pre{
     font-size:8px;
-    margin:3px;
+    margin: 0px 0px 0px 6px;
   }
-  .statistique-un{
-    position: absolute;
-    left:12px;
-  }
-  .statistique-deux{
-    position: absolute;
-    left: 39px;
-  }
-  .statistique-trois{
-    position: absolute;
-    left: 53px;
-  }
-  .statistique-quatre{
-    position: absolute;
-    left:76px;
-  }
-  .statistique-cinq{
-    position: absolute;
-    left:105px;
-  }
-  .statistique-six{
-    position: absolute;
-    left: 60px;
+
+  .statistiques{
+    margin: 10px 0px 0px 16px;
   }
   .coun-play{
     width: 94em;
