@@ -1,4 +1,13 @@
 document.addEventListener('DOMContentLoaded',() => {
-    const ajoute=document.getElementById('boutton-ajoute');
-    ajoute.addEventListener('click',)
+    fetch("/js/data.json")
+    .then((res) => {
+        return res.json();
+    })
+    .then((data) => {
+        console.log("Data fetched successfully:", data);
+    })
+    .catch((error) => {
+        console.error("Unable to fetch data:", error);
+    });
+
 })
