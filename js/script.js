@@ -105,6 +105,7 @@ ajoute.addEventListener('click', () => {
                    
 
 
+            
 
             ajouterLf.addEventListener("click", () => {
                 counPlay.innerHTML="";
