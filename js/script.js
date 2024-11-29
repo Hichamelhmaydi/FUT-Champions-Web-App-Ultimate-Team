@@ -1,10 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     let counPlay = document.querySelector('.coun-play');
-
+    let red;
+    
     let close = document.querySelector('#close');
+    close.addEventListener("click", () => {
+        counPlay.style.display = 'none';
+    }) ;
 
-    const cardplay=document.getElementsByClassName('card-player');
-
+    let ID=0;
+    let IDE=0;
+    let cardplay=document.getElementsByClassName('card-player');
+    
     const deff = document.querySelectorAll('#ajouter-cb');
     const deffence=Array.from(deff);
     const  ajouterR=document.querySelector('#ajouter-rb');
@@ -40,17 +46,20 @@ ajoute.addEventListener('click', () => {
         console.log(arr);
 
 
-        
+
 
 
         ajouterL.addEventListener("click", () => {
             counPlay.innerHTML="";
-            counPlay.style.display = 'block';    
+           
+            counPlay.append(close);
+            counPlay.style.display = 'block';  
                 arr.forEach(element => {
-                    
                     if(element.position==="LB"){
+                        ID++;
+                        IDE++;
                         const htmlContent = `
-                        <div class="card-player">
+                        <div class="card-player" id="${ID}">
                        <img src="${element.photo}" alt="joueur photo">
                        <div class="post-total">
                          <span id="total-player">${element.rating}</span><br>
@@ -72,28 +81,41 @@ ajoute.addEventListener('click', () => {
                              <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
                              <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
                        </div>
-                        
+                       <button style="background:red" class="red" id="${IDE}">Suprimé</button>
                     </div>
                      `
-                    
                         counPlay.insertAdjacentHTML('beforeend', htmlContent);
-                        
+                        red = document.querySelectorAll('.red');
+                        red.forEach(item => {
+                            item.addEventListener('click', () => {
+                                let cardPlayer = item.closest('.card-player');
+                                if (cardPlayer) {
+                                    cardPlayer.remove();  
+                                }
+                            });
+                        });
+                         
                     }
-                    
+                  
+ 
                 });
+ 
             })
 
-
+                   
 
 
 
             ajouterLf.addEventListener("click", () => {
                 counPlay.innerHTML="";
+                counPlay.append(close);
                 counPlay.style.display = 'block';    
                     arr.forEach(element => {
                         
                         if(element.position==="LW"){
+                            ID++;
                             const htmlContent = `
+                             <div class="card-player" id="${ID}">
                             <div class="card-player">
                            <img src="${element.photo}" alt="joueur photo">
                            <div class="post-total">
@@ -115,10 +137,18 @@ ajoute.addEventListener('click', () => {
                                  <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
                                  <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
                                  <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
+                                 <button style="background:red" class="red" id="${IDE}">btn</button>
                            </div>
                         </div>
                          `;
                             counPlay.insertAdjacentHTML('beforeend', htmlContent);
+                            red = document.querySelectorAll('.red');
+                            red.forEach(item=>{
+                                item.addEventListener('click',() => {
+                                    alert('eee');
+                                });
+                            })
+    
                             
                         }
                     });
@@ -129,11 +159,14 @@ ajoute.addEventListener('click', () => {
 
                 ajouterRf.addEventListener("click", () => {
                     counPlay.innerHTML="";
+                    counPlay.append(close);
                     counPlay.style.display = 'block';    
                         arr.forEach(element => {
                             
                             if(element.position==="RW"){
+                                ID++;
                                 const htmlContent = `
+                                 <div class="card-player" id="${ID}">
                                 <div class="card-player">
                                <img src="${element.photo}" alt="joueur photo">
                                <div class="post-total">
@@ -155,11 +188,17 @@ ajoute.addEventListener('click', () => {
                                      <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
                                      <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
                                      <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
+                                    <button style="background:red" class="red" id="${IDE}">btn</button>
                                </div>
                             </div>
                              `;
                                 counPlay.insertAdjacentHTML('beforeend', htmlContent);
-                                
+                                red = document.querySelectorAll('.red');
+                                red.forEach(item=>{
+                                    item.addEventListener('click',() => {
+                                        alert('eee');
+                                    });
+                                })
                             }
                         });
                     })
@@ -169,12 +208,16 @@ ajoute.addEventListener('click', () => {
 
 
                 ajouteSt.addEventListener("click", () => {
+                    
                     counPlay.innerHTML="";
+                    counPlay.append(close);
                     counPlay.style.display = 'block';    
                         arr.forEach(element => {
                             
                             if(element.position==="ST"){
+                                ID++;
                                 const htmlContent = `
+                                 <div class="card-player" id="${ID}">
                                 <div class="card-player">
                                <img src="${element.photo}" alt="joueur photo">
                                <div class="post-total">
@@ -196,11 +239,17 @@ ajoute.addEventListener('click', () => {
                                      <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
                                      <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
                                      <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
+                                    <button style="background:red" class="red" id="${IDE}">btn</button>
                                </div>
                             </div>
                              `;
                                 counPlay.insertAdjacentHTML('beforeend', htmlContent);
-                                
+                                red = document.querySelectorAll('.red');
+                                red.forEach(item=>{
+                                    item.addEventListener('click',() => {
+                                        alert('eee');
+                                    });
+                                })
                             }
                         });
                     })
@@ -212,11 +261,14 @@ ajoute.addEventListener('click', () => {
 
                     ajouteSt.addEventListener("click", () => {
                         counPlay.innerHTML="";
+                        counPlay.append(close);
                         counPlay.style.display = 'block';    
                             arr.forEach(element => {
                                 
                                 if(element.position==="ST"){
+                                    ID++;
                                     const htmlContent = `
+                                     <div class="card-player" id="${ID}">
                                     <div class="card-player">
                                    <img src="${element.photo}" alt="joueur photo">
                                    <div class="post-total">
@@ -238,11 +290,17 @@ ajoute.addEventListener('click', () => {
                                          <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
                                          <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
                                          <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
+                                        <button style="background:red" class="red" id="${IDE}">btn</button>
                                    </div>
                                 </div>
                                  `;
                                     counPlay.insertAdjacentHTML('beforeend', htmlContent);
-                                    
+                                    red = document.querySelectorAll('.red');
+                                    red.forEach(item=>{
+                                        item.addEventListener('click',() => {
+                                            alert('eee');
+                                        });
+                                    })
                                 }
                             });
                         })
@@ -252,11 +310,14 @@ ajoute.addEventListener('click', () => {
 
         ajouterR.addEventListener("click", () => {
             counPlay.innerHTML="";
+            counPlay.append(close);
             counPlay.style.display = 'block';    
                 arr.forEach(element => {
                     
                     if(element.position==="RB"){
+                        ID++;
                         const htmlContent = `
+                         <div class="card-player" id="${ID}">
                         <div class="card-player">
                        <img src="${element.photo}" alt="joueur photo">
                        <div class="post-total">
@@ -278,11 +339,17 @@ ajoute.addEventListener('click', () => {
                              <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
                              <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
                              <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
+                            <button style="background:red" class="red" id="${IDE}">btn</button>
                        </div>
                     </div>
                      `;
                         counPlay.insertAdjacentHTML('beforeend', htmlContent);
-                        
+                        red = document.querySelectorAll('.red');
+                        red.forEach(item=>{
+                            item.addEventListener('click',() => {
+                                alert('eee');
+                            });
+                        })
                     }
                 });
             })
@@ -296,9 +363,12 @@ ajoute.addEventListener('click', () => {
         cen.addEventListener('click', () => {
             counPlay.style.display = 'block';
             counPlay.innerHTML="";
+            counPlay.append(close);
                 arr.forEach(element => {
                     if(element.position==="CM"){
+                        ID++;
                         const htmlContent = `
+                         <div class="card-player" id="${ID}">
                         <div class="card-player">
                        <img src="${element.photo}" alt="joueur photo">
                        <div class="post-total">
@@ -320,11 +390,18 @@ ajoute.addEventListener('click', () => {
                              <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
                              <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
                              <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
+                             <button style="background:red" class="red" id="${IDE}">btn</button>
                        </div>
                     </div>
     
                      `;
                         counPlay.insertAdjacentHTML('beforeend', htmlContent);
+                        red = document.querySelectorAll('.red');
+                        red.forEach(item=>{
+                            item.addEventListener('click',() => {
+                                alert('eee');
+                            });
+                        })
                     }
                 });
             })
@@ -341,9 +418,12 @@ ajoute.addEventListener('click', () => {
             deff.addEventListener('click', () => {
                 counPlay.style.display = 'block';
                 counPlay.innerHTML="";
+                counPlay.append(close);
                     arr.forEach(element => {
                         if(element.position==="CB"){
+                            ID++;
                             const htmlContent = `
+                            <div class="card-player" id="${ID}">
                             <div class="card-player">
                            <img src="${element.photo}" alt="joueur photo">
                            <div class="post-total">
@@ -365,11 +445,18 @@ ajoute.addEventListener('click', () => {
                                  <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
                                  <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
                                  <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
+                                 <button style="background:red" class="red" id="${IDE}">btn</button>
                            </div>
                         </div>
         
                          `;
                             counPlay.insertAdjacentHTML('beforeend', htmlContent);
+                            red = document.querySelectorAll('.red');
+                            red.forEach(item=>{
+                                item.addEventListener('click',() => {
+                                    alert('eee');
+                                });
+                            })
                         }
                     });
                 })
@@ -387,11 +474,14 @@ ajoute.addEventListener('click', () => {
     
         ajouteGk.addEventListener("click", () => {
             counPlay.innerHTML="";
+            counPlay.append(close);
             counPlay.style.display = 'block';    
                 arr.forEach(element => {
                     
                     if(element.position==="GK"){
+                        ID++;
                         const htmlContent = `
+                        <div class="card-player" id="${ID}">
                         <div class="card-player">
                            <img src="${element.photo}" alt="joueur photo">
                            <div class="post-total">
@@ -413,10 +503,17 @@ ajoute.addEventListener('click', () => {
                                  <span class="statistique-quatre">kicking<span class="dribble">${element.kicking}</span></span><br>
                                  <span class="statistique-cinq">reflexes <span class="defense">${element.reflexes}</span></span>
                                  <span class="statistique-six">speed<span class="physique">${element.speed}</span></span>
+                                 <button style="background:red" class="red" id="${IDE}">btn</button>
                            </div>
                         </div>
                      `;
                         counPlay.insertAdjacentHTML('beforeend', htmlContent);
+                        red = document.querySelectorAll('.red');
+                        red.forEach(item=>{
+                            item.addEventListener('click',() => {
+                                alert('eee');
+                            });
+                        })
                     }
                 });
             })
@@ -453,9 +550,8 @@ ajoute.addEventListener('click', () => {
 
 
 
-        close.addEventListener("click", (e) => {
-            counPlay.style.display = 'none';
-        }); 
+      
+       
     });
 
 

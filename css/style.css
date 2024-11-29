@@ -104,7 +104,7 @@ form {
     margin: 10px 0px 0px 16px;
   }
   .coun-play{
-    width: 94em;
+    width: auto;
     position: absolute;
     top:12px;
     border-radius:2em;
