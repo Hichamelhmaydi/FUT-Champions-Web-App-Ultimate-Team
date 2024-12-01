@@ -88,7 +88,7 @@ ajoute.addEventListener('click', () => {
                      `
                         counPlay.insertAdjacentHTML('beforeend', htmlContent);
                         deletPlayer () ;
-                        ajoutePlayer ();
+                        ajoutePlayerLb ();
                     }
                   
                 });
@@ -441,7 +441,7 @@ ajoute.addEventListener('click', () => {
 
         }
 
-        function ajoutePlayer() {
+        function ajoutePlayerLb() {
             let addButtons = document.querySelectorAll('.add');
             addButtons.forEach(button => {
                 button.addEventListener('click', () => {
