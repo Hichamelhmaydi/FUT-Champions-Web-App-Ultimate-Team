@@ -88,7 +88,7 @@ ajoute.addEventListener('click', () => {
                      `
                         counPlay.insertAdjacentHTML('beforeend', htmlContent);
                         deletPlayer () ;
-                        ajoutePlayerLb ();
+                     
                     }
                   
                 });
@@ -134,11 +134,10 @@ ajoute.addEventListener('click', () => {
                            </div>
                             </div>
                               <button style="background:red" class="supp" id="${IDE}">Suprimé</button>
-                              <button style="background:red" class="add" id="${IDE}">Ajouter</button>
                          `;
                             counPlay.insertAdjacentHTML('beforeend', htmlContent);
                             deletPlayer ()
-                            ajoutePlayer()
+                            
                         }
                     });
                 })
@@ -285,8 +284,8 @@ ajoute.addEventListener('click', () => {
 
 
         
-    centre.forEach(cen => {
-        cen.addEventListener('click', () => {
+  
+            centre.addEventListener('click', () => {
             counPlay.style.display = 'block';
             counPlay.innerHTML="";
             counPlay.append(close);
@@ -325,7 +324,7 @@ ajoute.addEventListener('click', () => {
                     }
                 });
             })
-        });
+       
 
 
 
@@ -336,8 +335,8 @@ ajoute.addEventListener('click', () => {
 
         deffence.forEach(deff => {
             deff.addEventListener('click', () => {
-                counPlay.style.display = 'block';
                 counPlay.innerHTML="";
+                counPlay.style.display = 'block';
                 counPlay.append(close);
                     arr.forEach(element => {
                         if(element.position==="CB"){
@@ -441,27 +440,13 @@ ajoute.addEventListener('click', () => {
 
         }
 
-        function ajoutePlayerLb() {
-            let addButtons = document.querySelectorAll('.add');
-            addButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                   
-                    let cardPlayer = button.closest('.card-player');
-        
-                    let playerImage = cardPlayer.querySelector('img').src;
-        
-                    
-                    let positionElement = document.getElementById(button.id);
-        
-                 
-                    if (positionElement) {
-                  
-                        ajouterL.innerHTML = `<img src="${playerImage}" alt="Player" class="position-player" style="width: 20%; margin:0px; padding:0px">`; 
-                    }
-                });
-            });
-        }
-        
+       
+
+
+       
+
+
+
        
 
 
