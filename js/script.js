@@ -82,22 +82,13 @@ ajoute.addEventListener('click', () => {
                              <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
                        </div>
                        <button style="background:red" class="red" id="${IDE}">Suprimé</button>
+                        <button style="background:red" class="red" id="${IDE}">Suprimé</button>
                     </div>
                      `
                         counPlay.insertAdjacentHTML('beforeend', htmlContent);
-                        red = document.querySelectorAll('.red');
-                        red.forEach(item => {
-                            item.addEventListener('click', () => {
-                                let cardPlayer = item.closest('.card-player');
-                                if (cardPlayer) {
-                                    cardPlayer.remove();  
-                                }
-                            });
-                        });
-                         
+                        deletPlayer () 
                     }
                   
- 
                 });
  
             })
@@ -138,18 +129,12 @@ ajoute.addEventListener('click', () => {
                                  <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
                                  <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
                                  <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
-                                 <button style="background:red" class="red" id="${IDE}">btn</button>
                            </div>
-                        </div>
+                            </div>
+                              <button style="background:red" class="red" id="${IDE}">Suprimé</button>
                          `;
                             counPlay.insertAdjacentHTML('beforeend', htmlContent);
-                            red = document.querySelectorAll('.red');
-                            red.forEach(item=>{
-                                item.addEventListener('click',() => {
-                                    alert('eee');
-                                });
-                            })
-    
+                            deletPlayer ()
                             
                         }
                     });
@@ -189,71 +174,18 @@ ajoute.addEventListener('click', () => {
                                      <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
                                      <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
                                      <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
-                                    <button style="background:red" class="red" id="${IDE}">btn</button>
                                </div>
                             </div>
+                            <button style="background:red" class="red" id="${IDE}">Suprimé</button>
                              `;
                                 counPlay.insertAdjacentHTML('beforeend', htmlContent);
-                                red = document.querySelectorAll('.red');
-                                red.forEach(item=>{
-                                    item.addEventListener('click',() => {
-                                        alert('eee');
-                                    });
-                                })
+                                deletPlayer ()
                             }
                         });
                     })
         
 
-               
 
-
-                ajouteSt.addEventListener("click", () => {
-                    
-                    counPlay.innerHTML="";
-                    counPlay.append(close);
-                    counPlay.style.display = 'block';    
-                        arr.forEach(element => {
-                            
-                            if(element.position==="ST"){
-                                ID++;
-                                const htmlContent = `
-                                 <div class="card-player" id="${ID}">
-                                <div class="card-player">
-                               <img src="${element.photo}" alt="joueur photo">
-                               <div class="post-total">
-                                 <span id="total-player">${element.rating}</span><br>
-                                 <span id="position">${element.position}</span>
-                               </div>
-                               <div class="flag-club">
-                                 <span class="flag">
-                                     <img src="${element.flag}" alt="${element.nationality}">
-                                 </span>
-                                 <span class="club">
-                                     <img src="${element.logo}" alt="${element.club}">
-                                 </span>
-                               </div>
-                               <div class="statistiques">
-                                     <span class="statistique-un">rythme<span class="rythme">${element.pace}</span></span>
-                                     <span class="statistique-deux">tir <span class="tir">${element.shooting}</span></span>
-                                     <span class="statistique-trois">passe <span class="passe">${element.passing}</span></span><br>
-                                     <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
-                                     <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
-                                     <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
-                                    <button style="background:red" class="red" id="${IDE}">btn</button>
-                               </div>
-                            </div>
-                             `;
-                                counPlay.insertAdjacentHTML('beforeend', htmlContent);
-                                red = document.querySelectorAll('.red');
-                                red.forEach(item=>{
-                                    item.addEventListener('click',() => {
-                                        alert('eee');
-                                    });
-                                })
-                            }
-                        });
-                    })
 
 
 
@@ -291,17 +223,12 @@ ajoute.addEventListener('click', () => {
                                          <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
                                          <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
                                          <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
-                                        <button style="background:red" class="red" id="${IDE}">btn</button>
                                    </div>
                                 </div>
+                                <button style="background:red" class="red" id="${IDE}">Suprimé</button>
                                  `;
                                     counPlay.insertAdjacentHTML('beforeend', htmlContent);
-                                    red = document.querySelectorAll('.red');
-                                    red.forEach(item=>{
-                                        item.addEventListener('click',() => {
-                                            alert('eee');
-                                        });
-                                    })
+                                    deletPlayer ()
                                 }
                             });
                         })
@@ -340,17 +267,12 @@ ajoute.addEventListener('click', () => {
                              <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
                              <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
                              <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
-                            <button style="background:red" class="red" id="${IDE}">btn</button>
                        </div>
                     </div>
+                    <button style="background:red" class="red" id="${IDE}">Suprimé</button>
                      `;
                         counPlay.insertAdjacentHTML('beforeend', htmlContent);
-                        red = document.querySelectorAll('.red');
-                        red.forEach(item=>{
-                            item.addEventListener('click',() => {
-                                alert('eee');
-                            });
-                        })
+                        deletPlayer ()
                     }
                 });
             })
@@ -391,18 +313,12 @@ ajoute.addEventListener('click', () => {
                              <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
                              <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
                              <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
-                             <button style="background:red" class="red" id="${IDE}">btn</button>
                        </div>
                     </div>
-    
+                    <button style="background:red" class="red" id="${IDE}">Suprimé</button>
                      `;
                         counPlay.insertAdjacentHTML('beforeend', htmlContent);
-                        red = document.querySelectorAll('.red');
-                        red.forEach(item=>{
-                            item.addEventListener('click',() => {
-                                alert('eee');
-                            });
-                        })
+                        deletPlayer ()
                     }
                 });
             })
@@ -446,18 +362,12 @@ ajoute.addEventListener('click', () => {
                                  <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
                                  <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
                                  <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
-                                 <button style="background:red" class="red" id="${IDE}">btn</button>
                            </div>
                         </div>
-        
+                           <button style="background:red" class="red" id="${IDE}">Suprimé</button>
                          `;
                             counPlay.insertAdjacentHTML('beforeend', htmlContent);
-                            red = document.querySelectorAll('.red');
-                            red.forEach(item=>{
-                                item.addEventListener('click',() => {
-                                    alert('eee');
-                                });
-                            })
+                            deletPlayer ()
                         }
                     });
                 })
@@ -504,17 +414,12 @@ ajoute.addEventListener('click', () => {
                                  <span class="statistique-quatre">kicking<span class="dribble">${element.kicking}</span></span><br>
                                  <span class="statistique-cinq">reflexes <span class="defense">${element.reflexes}</span></span>
                                  <span class="statistique-six">speed<span class="physique">${element.speed}</span></span>
-                                 <button style="background:red" class="red" id="${IDE}">btn</button>
                            </div>
                         </div>
+                        <button style="background:red" class="red" id="${IDE}">Suprimé</button>
                      `;
                         counPlay.insertAdjacentHTML('beforeend', htmlContent);
-                        red = document.querySelectorAll('.red');
-                        red.forEach(item=>{
-                            item.addEventListener('click',() => {
-                                alert('eee');
-                            });
-                        })
+                        deletPlayer ()
                     }
                 });
             })
@@ -522,9 +427,20 @@ ajoute.addEventListener('click', () => {
 
 
 
+        function deletPlayer (){
+            red = document.querySelectorAll('.red');
+            red.forEach(item=>{
+                item.addEventListener('click',() => {
+                    let cardPlayer = item.closest('.card-player');
+                        cardPlayer.remove();
+                });
+            })
 
+        }
 
+        function ajoutePlayer (){
 
+        }
 
 
        
