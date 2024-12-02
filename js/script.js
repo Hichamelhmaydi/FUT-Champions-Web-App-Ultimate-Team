@@ -379,7 +379,8 @@ ajoute.addEventListener('click', () => {
                            <button style="background:red" class="add" id="${IDE}">Ajouter</button>
                          `;
                             counPlay.insertAdjacentHTML('beforeend', htmlContent);
-                            deletPlayer ()
+                            deletPlayer ();
+                            ajoutePlayerCb();
                         }
                     });
                 })
@@ -451,7 +452,6 @@ ajoute.addEventListener('click', () => {
             })
 
         }
-
         function ajoutePlayerLb() {
             let addButtons = document.querySelectorAll('.add');
             addButtons.forEach(button => {
@@ -465,8 +465,7 @@ ajoute.addEventListener('click', () => {
                         `; 
                 });
             });
-        }
-        
+        }  
         function ajoutePlayerRb() {
             let addButtons = document.querySelectorAll('.add');
             addButtons.forEach(button => {
@@ -479,7 +478,6 @@ ajoute.addEventListener('click', () => {
                 });
             });
         }
-
         function ajoutePlayerGk() {
             let addButtons = document.querySelectorAll('.add');
             addButtons.forEach(button => {
@@ -487,13 +485,11 @@ ajoute.addEventListener('click', () => {
                     let cardPlayer = button.closest('.card-player');
                     let playerImage = cardPlayer.querySelector('img').src;
                     ajouteGk.innerHTML = `
-                        <img src="${playerImage}" alt="Player" class="position-player" style="width: 70%; margin:0px; padding:0px">
+                        <img src="${playerImage}" alt="Player" class="position-player" style="width: 60%; margin-left:20px; padding:0px">
                         `;  
                 });
             });
         }
-
-
         function ajoutePlayerLw() {
             let addButtons = document.querySelectorAll('.add');
             addButtons.forEach(button => {
@@ -501,13 +497,11 @@ ajoute.addEventListener('click', () => {
                     let cardPlayer = button.closest('.card-player');
                     let playerImage = cardPlayer.querySelector('img').src;
                     ajouterLf.innerHTML =`
-                     <img src="${playerImage}" alt="Player" class="position-player" style="width: 30%; margin:0px; padding:0px">
+                     <img src="${playerImage}" alt="Player" class="position-player" style="width:  27%; margin:0px; padding:0px">
                     `;  
                 }); 
             });
         }
-
-
         function ajoutePlayerRw() {
             let addButtons = document.querySelectorAll('.add');
             addButtons.forEach(button => {
@@ -515,14 +509,11 @@ ajoute.addEventListener('click', () => {
                     let cardPlayer = button.closest('.card-player');
                     let playerImage = cardPlayer.querySelector('img').src;
                     ajouterRf.innerHTML =`
-                     <img src="${playerImage}" alt="Player" class="position-player" style="width: 30%; margin:0px; padding:0px">
+                     <img src="${playerImage}" alt="Player" class="position-player" style="width:  27%; margin:0px; padding:0px">
                     `;  
                 }); 
             });
         }
-
-
-
         function ajoutePlayerSt() {
             let addButtons = document.querySelectorAll('.add');
             addButtons.forEach(button => {
@@ -530,12 +521,24 @@ ajoute.addEventListener('click', () => {
                     let cardPlayer = button.closest('.card-player');
                     let playerImage = cardPlayer.querySelector('img').src;
                     ajouteSt.innerHTML =`
-                     <img src="${playerImage}" alt="Player" class="position-player" style="width: 30%; margin:0px; padding:0px">
+                     <img src="${playerImage}" alt="Player" class="position-player" style="width: 27%; margin:0px; padding:0px">
                     `;  
                 }); 
             });
         }
 
+        function ajoutePlayerCb() {
+            let addButtons = document.querySelectorAll('.add');
+            addButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    let cardPlayer = button.closest('.card-player');
+                    let playerImage = cardPlayer.querySelector('img').src;
+                    deff.innerHTML =`
+                     <img src="${playerImage}" alt="Player" class="position-player" style="width: 30%; margin:0px; padding:0px">
+                    `;  
+                }); 
+            });
+        }
 
 
 

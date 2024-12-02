@@ -137,6 +137,10 @@ form {
     background-color: gold;
     border-radius: 2em;
   }
+  .position-player:hover{
+    background-color: goldenrod;
+  }
+
   .supp{
     border: none;
     margin-top:2em;
@@ -147,4 +151,7 @@ form {
     border: none;
     border-radius:1em;
     cursor: pointer;
+  }
+  #attaque{
+    margin-left:15px;
   }
