@@ -133,3 +133,18 @@ form {
     border-radius:1em;
     cursor: pointer;
   }
+  .position-player{
+    background-color: gold;
+    border-radius: 2em;
+  }
+  .supp{
+    border: none;
+    margin-top:2em;
+    border-radius:1em;
+    cursor: pointer;
+  }
+  .add{
+    border: none;
+    border-radius:1em;
+    cursor: pointer;
+  }
