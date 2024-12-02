@@ -11,14 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
     let IDE=0;
     let cardplay=document.getElementsByClassName('card-player');
     
-    const deff = document.querySelectorAll('#ajouter-cb');
-    const deffence=Array.from(deff);
+    let ajouerCb = document.querySelector('#ajouter-cb');
+
+    
     const  ajouterR=document.querySelector('#ajouter-rb');
     let  ajouterL=document.querySelector('#ajouter-lb');
 
 
     let ajouteGk = document.getElementById('ajouter-gk');
-    let defence =document.querySelector('#defense')
+   
 
     const cen = document.querySelectorAll('#ajouter-cm');
     const centre=Array.from(cen);
@@ -342,8 +343,8 @@ ajoute.addEventListener('click', () => {
 
 
 
-        deffence.forEach(deff => {
-            deff.addEventListener('click', () => {
+      
+        ajouerCb.addEventListener('click', () => {
                 counPlay.style.display = 'block';
                 counPlay.innerHTML="";
                 counPlay.append(close);
@@ -380,11 +381,13 @@ ajoute.addEventListener('click', () => {
                          `;
                             counPlay.insertAdjacentHTML('beforeend', htmlContent);
                             deletPlayer ();
-                            ajoutePlayerCb();
+                        
                         }
                     });
+               
+
                 })
-            });
+      
 
 
 
@@ -526,21 +529,7 @@ ajoute.addEventListener('click', () => {
                 }); 
             });
         }
-
-        function ajoutePlayerCb() {
-            let addButtons = document.querySelectorAll('.add');
-            addButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    let cardPlayer = button.closest('.card-player');
-                    let playerImage = cardPlayer.querySelector('img').src;
-                    deff.innerHTML =`
-                     <img src="${playerImage}" alt="Player" class="position-player" style="width: 30%; margin:0px; padding:0px">
-                    `;  
-                }); 
-            });
-        }
-
-
+        
 
 
 
