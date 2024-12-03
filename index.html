@@ -9,7 +9,7 @@
 <body>
     <section class="count">
         <section class="right">
-            <button id="boutton-ajoute">
+            <button id="boutton-ajoutee">
                 <img src="/assets/imgs/add.png" alt="player" id="ajouter" class="img-ajoute">
             </button>
             <div class="changment">
@@ -17,21 +17,23 @@
             </div>
         </section>
         <section class="left">
-            <div id="ajouter-gk">
+            <span id="ajouter-gk">
                 <button id="boutton-ajoute">
                     <img src="/assets/imgs/add.png" alt="player" class="img-ajoute">
                 </button>
-            </div>
+            </span>
             <div id="defense">
                 <span id="ajouter-rb">
                     <button id="boutton-ajoute">
                         <img src="/assets/imgs/add.png" alt="player" class="img-ajoute">
                     </button>
                 </span>
-                <span id="ajouter-cb">
+                <span id="ajouter-cb-un">
                     <button id="boutton-ajoute">
                         <img src="/assets/imgs/add.png" alt="player" class="img-ajoute">
                     </button>
+                </span>
+                <span id="ajouter-cb-deux">
                     <button id="boutton-ajoute">
                         <img src="/assets/imgs/add.png" alt="player" class="img-ajoute">
                     </button>
@@ -43,15 +45,21 @@
                 </span>
             </div>
             <div id="mediane">
-                <button id="boutton-ajoute">
-                    <img src="/assets/imgs/add.png" alt="player" id="ajouter-cm-1" class="img-ajoute">
-                </button>
-                <button id="boutton-ajoute">
-                    <img src="/assets/imgs/add.png" alt="player" id="ajouter-cm-2" class="img-ajoute">
-                </button>
-                <button id="boutton-ajoute">
-                    <img src="/assets/imgs/add.png" alt="player" id="ajouter-cm-3" class="img-ajoute">
-                </button>
+                <span id="ajouter-cm-un">
+                    <button id="boutton-ajoute">
+                        <img src="/assets/imgs/add.png" alt="player"  class="img-ajoute">
+                    </button>
+                </span>
+                <span id="ajouter-cm-deux">
+                    <button id="boutton-ajoute">
+                        <img src="/assets/imgs/add.png" alt="player"  class="img-ajoute">
+                    </button>
+                </span>
+                <span id="ajouter-cm-trois">
+                    <button id="boutton-ajoute">
+                        <img src="/assets/imgs/add.png" alt="player"  class="img-ajoute">
+                    </button>
+                </span>
             </div>
             <div id="attaque">
                 <span id="ajouter-lf" >
@@ -75,10 +83,10 @@
     <form>
         <button id="close">Fermer</button>
         <div class="all-info">
-            <label>Nom et Prénom</label><br>
-            <input type="text" maxlength="15"><br>
+          
+            <input type="text" maxlength="15" placeholder="Nom et Prénom"><br>
             <label>photo</label><br>
-            <input type="file"><br>
+            <input type="file" placeholder="photo"><br>
             <label>nationality</label><br>
             <input type="file"><br>
             <label>club</label><br>
@@ -95,19 +103,14 @@
                     <option value="RF">RF</option>
                     <option value="ST">ST</option>
                 </select><br>
-                <label>notation</label><br>
-                <input type="number" max="99" min="40"><br>
-                <label>rythme</label><br>
-                <input type="number" max="99" min="40"><br>
-                <label>tir</label><br>
-                <input type="number" max="99" min="40"><br>
-                <label>passe</label><br>
-                <input type="number" max="99" min="40"><br>
-                <label>dribble</label><br>
-                <input type="number" max="99" min="40"><br>
-                <label>défense</label><br>
-                <input type="number" max="99" min="40"><br>
-                <label>physique</label><br>
+                <input type="number" max="99" min="40" placeholder="notation"><br>
+                <input type="number" max="99" min="40" placeholder="rythme"><br>
+                <input type="number" max="99" min="40" placeholder="tir"><br>
+                <input type="number" max="99" min="40" placeholder="passe"><br>
+                <input type="number" max="99" min="40" placeholder="dribble"><br>
+                <input type="number" max="99" min="40" placeholder="défense"><br>
+                <input type="number" max="99" min="40" placeholder="physique"><br>
+                <button type="submit">envoyer</button>
             </section>
         </div>
     </form>

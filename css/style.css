@@ -26,6 +26,11 @@ form {
     transition:0.3s;
 }
 #boutton-ajoute{
+  background:none;
+  border:none;
+  cursor: pointer;
+}
+#boutton-ajoutee{
     background:none;
     border:none;
     cursor: pointer;
@@ -154,4 +159,20 @@ form {
   }
   #attaque{
     margin-left:15px;
+  }
+  #defense{
+    margin-left:15px;
+  }
+  #mediane{
+    margin-left:1px;
+  }
+  input{
+    width:28em;
+    margin:0.5em;
+    outline: none;
+    border-radius: 1em;
+  }
+
+  label{
+    color: black;
   }

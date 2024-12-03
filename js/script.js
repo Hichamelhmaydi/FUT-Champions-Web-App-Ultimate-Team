@@ -11,34 +11,34 @@ document.addEventListener('DOMContentLoaded', () => {
     let IDE=0;
     let cardplay=document.getElementsByClassName('card-player');
     
-    let ajouerCb = document.querySelector('#ajouter-cb');
-
+    let ajouerCb1 = document.querySelector('#ajouter-cb-un');
+    let ajouerCb2 =document.querySelector('#ajouter-cb-deux');
     
     const  ajouterR=document.querySelector('#ajouter-rb');
     let  ajouterL=document.querySelector('#ajouter-lb');
-
+   
 
     let ajouteGk = document.getElementById('ajouter-gk');
    
 
-    const cen = document.querySelectorAll('#ajouter-cm');
-    const centre=Array.from(cen);
+    let ajouerCm1 = document.querySelector('#ajouter-cm-un');
+    let ajouerCm2 = document.querySelector('#ajouter-cm-deux');
+    let ajouerCm3 = document.querySelector('#ajouter-cm-trois');
+    
+    let addedMidfielders = []; 
 
     let ajouterLf=document.querySelector('#ajouter-lf');
     const  ajouteSt=document.querySelector('#ajouter-st');
     const  ajouterRf=document.querySelector('#ajouter-rf');
 
-    let ajoute = document.getElementById('ajouter');
-let infoForm = document.querySelector('form');  
+    let ajoute = document.getElementById('boutton-ajoutee');
+    let infoForm = document.querySelector('form');  
 
 ajoute.addEventListener('click', () => {
     infoForm.style.display = 'block';  
 });
 
 
-
-
-    
     fetch("/js/data.json")
     .then((res) => {
         return res.json();
@@ -51,7 +51,7 @@ ajoute.addEventListener('click', () => {
 
 
 
-        ajouterL.addEventListener("click", () => {
+    ajouterL.addEventListener("click", () => {
             counPlay.innerHTML="";
            
             counPlay.append(close);
@@ -95,13 +95,7 @@ ajoute.addEventListener('click', () => {
                 });
  
             })
-
-                   
-
-
-            
-
-            ajouterLf.addEventListener("click", () => {
+    ajouterLf.addEventListener("click", () => {
                 counPlay.innerHTML="";
                 counPlay.append(close);
                 counPlay.style.display = 'block';    
@@ -143,12 +137,8 @@ ajoute.addEventListener('click', () => {
                             
                         }
                     });
-                })
-    
-    
-
-
-                ajouterRf.addEventListener("click", () => {
+            })
+    ajouterRf.addEventListener("click", () => {
                     counPlay.innerHTML="";
                     counPlay.append(close);
                     counPlay.style.display = 'block';    
@@ -190,17 +180,8 @@ ajoute.addEventListener('click', () => {
                                 ajoutePlayerRw();
                             }
                         });
-                    })
-        
-
-
-
-
-
-
-
-
-                    ajouteSt.addEventListener("click", () => {
+            })
+    ajouteSt.addEventListener("click", () => {
                         counPlay.innerHTML="";
                         counPlay.append(close);
                         counPlay.style.display = 'block';    
@@ -240,12 +221,8 @@ ajoute.addEventListener('click', () => {
                                     ajoutePlayerSt();
                                 }
                             });
-                        })
-
-
-
-
-        ajouterR.addEventListener("click", () => {
+            })
+    ajouterR.addEventListener("click", () => {
             counPlay.innerHTML="";
             counPlay.append(close);
             counPlay.style.display = 'block';    
@@ -286,15 +263,9 @@ ajoute.addEventListener('click', () => {
                         ajoutePlayerRb()
                     }
                 });
-            })
+            })   
 
-       
-
-
-
-        
-    centre.forEach(cen => {
-        cen.addEventListener('click', () => {
+    ajouerCm1.addEventListener('click', () => {
             counPlay.style.display = 'block';
             counPlay.innerHTML="";
             counPlay.append(close);
@@ -330,26 +301,101 @@ ajoute.addEventListener('click', () => {
                     <button style="background:red" class="add" id="${IDE}">Ajouter</button>
                      `;
                         counPlay.insertAdjacentHTML('beforeend', htmlContent);
-                        deletPlayer ()
+                        deletPlayer ();
+                        ajoutePlayerCm1();                        
                     }
                 });
             })
-        });
-
-
-
-
-
-
-
-
-      
-        ajouerCb.addEventListener('click', () => {
+    ajouerCm2.addEventListener('click', () => {
                 counPlay.style.display = 'block';
                 counPlay.innerHTML="";
                 counPlay.append(close);
                     arr.forEach(element => {
-                        if(element.position==="CB"){
+                        if(element.position==="CM"){
+                            ID++;
+                            const htmlContent = `
+                             <div class="card-player" id="${ID}">
+                            <div class="card-player">
+                           <img src="${element.photo}" alt="joueur photo">
+                           <div class="post-total">
+                             <span id="total-player">${element.rating}</span><br>
+                             <span id="position">${element.position}</span>
+                           </div>
+                           <div class="flag-club">
+                             <span class="flag">
+                                 <img src="${element.flag}" alt="${element.nationality}">
+                             </span>
+                             <span class="club">
+                                 <img src="${element.logo}" alt="${element.club}">
+                             </span>
+                           </div>
+                           <div class="statistiques">
+                                 <span class="statistique-un">rythme<span class="rythme">${element.pace}</span></span>
+                                 <span class="statistique-deux">tir <span class="tir">${element.shooting}</span></span>
+                                 <span class="statistique-trois">passe <span class="passe">${element.passing}</span></span><br>
+                                 <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
+                                 <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
+                                 <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
+                           </div>
+                        </div>
+                        <button style="background:red" class="supp" id="${IDE}">Suprimé</button>
+                        <button style="background:red" class="add" id="${IDE}">Ajouter</button>
+                         `;
+                            counPlay.insertAdjacentHTML('beforeend', htmlContent);
+                            deletPlayer ();
+                            ajoutePlayerCm2();
+                        }
+                    });
+            })
+    ajouerCm3.addEventListener('click', () => {
+                    counPlay.style.display = 'block';
+                    counPlay.innerHTML="";
+                    counPlay.append(close);
+                        arr.forEach(element => {
+                            if(element.position==="CM"){
+                                ID++;
+                                const htmlContent = `
+                                 <div class="card-player" id="${ID}">
+                                <div class="card-player">
+                               <img src="${element.photo}" alt="joueur photo">
+                               <div class="post-total">
+                                 <span id="total-player">${element.rating}</span><br>
+                                 <span id="position">${element.position}</span>
+                               </div>
+                               <div class="flag-club">
+                                 <span class="flag">
+                                     <img src="${element.flag}" alt="${element.nationality}">
+                                 </span>
+                                 <span class="club">
+                                     <img src="${element.logo}" alt="${element.club}">
+                                 </span>
+                               </div>
+                               <div class="statistiques">
+                                     <span class="statistique-un">rythme<span class="rythme">${element.pace}</span></span>
+                                     <span class="statistique-deux">tir <span class="tir">${element.shooting}</span></span>
+                                     <span class="statistique-trois">passe <span class="passe">${element.passing}</span></span><br>
+                                     <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
+                                     <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
+                                     <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
+                               </div>
+                            </div>
+                            <button style="background:red" class="supp" id="${IDE}">Suprimé</button>
+                            <button style="background:red" class="add" id="${IDE}">Ajouter</button>
+                             `;
+                                counPlay.insertAdjacentHTML('beforeend', htmlContent);
+                                deletPlayer ();
+                                ajoutePlayerCm3();
+                            }
+                        });
+            })
+  
+    ajouerCb1.addEventListener('click', () => {
+                counPlay.style.display = 'block';
+                counPlay.innerHTML="";
+                counPlay.append(close);
+
+                    arr.forEach(element => {
+                        if(element.name==="Antonio Rudiger"){
                             ID++;
                             const htmlContent = `
                             <div class="card-player" id="${ID}">
@@ -381,25 +427,61 @@ ajoute.addEventListener('click', () => {
                          `;
                             counPlay.insertAdjacentHTML('beforeend', htmlContent);
                             deletPlayer ();
-                        
+                            ajoutePlayerCb1 ();
                         }
                     });
+
+
+            
+                    
+                    
                
 
-                })
-      
-
-
-
-
-
-
-
-
-
-
+            })
+    ajouerCb2.addEventListener('click', () => {
+                    counPlay.style.display = 'block';
+                    counPlay.innerHTML="";
+                    counPlay.append(close);
+                        arr.forEach(element => {
+                            if(element.name==="Virgil van Dijk"){
+                                ID++;
+                                const htmlContent = `
+                                <div class="card-player" id="${ID}">
+                                <div class="card-player">
+                               <img src="${element.photo}" alt="joueur photo">
+                               <div class="post-total">
+                                 <span id="total-player">${element.rating}</span><br>
+                                 <span id="position">${element.position}</span>
+                               </div>
+                               <div class="flag-club">
+                                 <span class="flag">
+                                     <img src="${element.flag}" alt="${element.nationality}">
+                                 </span>
+                                 <span class="club">
+                                     <img src="${element.logo}" alt="${element.club}">
+                                 </span>
+                               </div>
+                               <div class="statistiques">
+                                     <span class="statistique-un">rythme<span class="rythme">${element.pace}</span></span>
+                                     <span class="statistique-deux">tir <span class="tir">${element.shooting}</span></span>
+                                     <span class="statistique-trois">passe <span class="passe">${element.passing}</span></span><br>
+                                     <span class="statistique-quatre">dribble<span class="dribble">${element.dribbling}</span></span>
+                                     <span class="statistique-cinq">defense <span class="defense">${element.defending}</span></span><br>
+                                     <span class="statistique-six">physique<span class="physique">${element.physical}</span></span>
+                               </div>
+                            </div>
+                               <button style="background:red" class="supp" id="${IDE}">Suprimé</button>
+                               <button style="background:red" class="add" id="${IDE}">Ajouter</button>
+                             `;
+                                counPlay.insertAdjacentHTML('beforeend', htmlContent);
+                                deletPlayer ();
+                                ajoutePlayerCb2 ();
+                            }
+                        });
+                   
     
-        ajouteGk.addEventListener("click", () => {
+            })    
+    ajouteGk.addEventListener("click", () => {
             counPlay.innerHTML="";
             counPlay.append(close);
             counPlay.style.display = 'block';    
@@ -529,29 +611,81 @@ ajoute.addEventListener('click', () => {
                 }); 
             });
         }
-        
-
-
-
-
-
-
-
-
-
-      
-       
+        function ajoutePlayerCb1() {
+                    let addButtons = document.querySelectorAll('.add');
+                    addButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            let cardPlayer = button.closest('.card-player');
+                            let playerImage = cardPlayer.querySelector('img').src;
+                            ajouerCb1.innerHTML =`
+                            <img src="${playerImage}" alt="Player" class="position-player" style="width: 20%; margin:0px; padding:0px">
+                            `; 
+                        }); 
+                    });
+        }
+         function ajoutePlayerCb2() {
+                    let addButtons = document.querySelectorAll('.add');
+                    addButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            let cardPlayer = button.closest('.card-player');
+                            let playerImage = cardPlayer.querySelector('img').src;
+                            ajouerCb2.innerHTML =`
+                            <img src="${playerImage}" alt="Player" class="position-player" style="width: 20%; margin:0px; padding:0px">
+                            `;  
+                        }); 
+                    });
+        }    
+        function ajoutePlayerCm1() {
+            let addButtons = document.querySelectorAll('.add');
+            addButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    let cardPlayer = button.closest('.card-player');
+                    let playerImage = cardPlayer.querySelector('img').src;
+                    ajouerCm1.innerHTML =`
+                    <img src="${playerImage}" alt="Player" class="position-player" style="width: 28%; margin:0px; padding:0px">
+                    `;  
+                }); 
+            });
+        }            
+        function ajoutePlayerCm2() {
+    let addButtons = document.querySelectorAll('.add');
+    addButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            let cardPlayer = button.closest('.card-player');
+            let playerImage = cardPlayer.querySelector('img').src;
+            ajouerCm2.innerHTML =`
+            <img src="${playerImage}" alt="Player" class="position-player" style="width: 28%; margin:0px; padding:0px">
+            `;  
+        }); 
     });
+        }            
+        function ajoutePlayerCm3() {
+    let addButtons = document.querySelectorAll('.add');
+    addButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            let cardPlayer = button.closest('.card-player');
+            let playerImage = cardPlayer.querySelector('img').src;
+            ajouerCm3.innerHTML =`
+            <img src="${playerImage}" alt="Player" class="position-player" style="width: 28%; margin:0px; padding:0px">
+            `;  
+        }); 
+    });
+        }            
 
 
 
- 
 
 
 
 
 
 
+
+
+    });
+    
+
+   
 
 
 
