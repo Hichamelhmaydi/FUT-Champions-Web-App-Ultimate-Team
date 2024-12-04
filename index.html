@@ -14,6 +14,8 @@
             </button>
             <div class="changment">
                 <h1>changement :</h1>
+
+               
             </div>
         </section>
         <section class="left">
@@ -80,20 +82,20 @@
             </div>
         </section>
     </section>
-    <form>
-        <button id="close">Fermer</button>
+
+    <form id="Formulaire">
+        <button id="closer">Fermer</button>
         <div class="all-info">
-          
-            <input type="text" maxlength="15" placeholder="Nom et Prénom"><br>
+            <input type="text" maxlength="15" placeholder="Nom et Prénom" id="name_pl"><br>
             <label>photo</label><br>
-            <input type="file" placeholder="photo"><br>
+            <input type="search" id="photo-pl" ><br>
             <label>nationality</label><br>
-            <input type="file"><br>
+            <input type="search" id="nationality-pl"><br>
             <label>club</label><br>
-            <input type="file"><br>
+            <input type="search" id="club-pl"><br>
             <section id="statistique">
                 <label>positionner de joueur</label><br>
-                <select id="positions">
+                <select id="position-pl">
                     <option value="GK">GK</option>
                     <option value="CB">CB</option>
                     <option value="LB">LB</option>
@@ -103,14 +105,14 @@
                     <option value="RF">RF</option>
                     <option value="ST">ST</option>
                 </select><br>
-                <input type="number" max="99" min="40" placeholder="notation"><br>
-                <input type="number" max="99" min="40" placeholder="rythme"><br>
-                <input type="number" max="99" min="40" placeholder="tir"><br>
-                <input type="number" max="99" min="40" placeholder="passe"><br>
-                <input type="number" max="99" min="40" placeholder="dribble"><br>
-                <input type="number" max="99" min="40" placeholder="défense"><br>
-                <input type="number" max="99" min="40" placeholder="physique"><br>
-                <button type="submit">envoyer</button>
+                <input type="number" max="99" min="40" placeholder="notation" id="notation-pl"><br>
+                <input type="number" max="99" min="40" placeholder="rythme" id="rythme-pl"><br>
+                <input type="number" max="99" min="40" placeholder="tir" id="tir-pl"><br>
+                <input type="number" max="99" min="40" placeholder="passe" id="passe-pl"><br>
+                <input type="number" max="99" min="40" placeholder="dribble" id="dribble-pl"><br>
+                <input type="number" max="99" min="40" placeholder="defense" id="defense-pl"><br>
+                <input type="number" max="99" min="40" placeholder="physique" id="physique-pl"><br>
+                <button  id="subinfo">envoyer</button>
             </section>
         </div>
     </form>
