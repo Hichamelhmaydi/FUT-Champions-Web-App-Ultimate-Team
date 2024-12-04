@@ -683,75 +683,70 @@ ajoute.addEventListener('click', () => {
         }); 
     });
         }            
-        subinfo.addEventListener('click',function(event) {
-            event.preventDefault();
-            let name_pl=document.getElementById('name_pl').value
-            let notation_pl=document.getElementById('notation-pl').value;
-            let rythme_pl=document.getElementById('rythme-pl').value;
-            let tir_pl=document.getElementById('tir-pl').value;
-            let passe_pl=document.getElementById('passe-pl').value;
-            let dribble_pl=document.getElementById('dribble-pl').value;
-            let defense_pl=document.getElementById('defense-pl').value;
-            let physique_pl=document.getElementById('physique-pl').value;
-            let position_pl = document.getElementById('position-pl').value;
-            let photo_pl = document.getElementById('photo-pl').value;
-            let nationality_pl = document.getElementById('nationality-pl').value;
-            let club_pl = document.getElementById('club-pl').value;
+document.getElementById('subinfo').addEventListener('click', function (event) {
+    event.preventDefault();
 
-            let card_play_chan=document.createElement('div');
+    const name_pl = document.getElementById('name_pl').value.trim();
+    const notation_pl = document.getElementById('notation-pl').value.trim();
+    const rythme_pl = document.getElementById('rythme-pl').value.trim();
+    const tir_pl = document.getElementById('tir-pl').value.trim();
+    const passe_pl = document.getElementById('passe-pl').value.trim();
+    const dribble_pl = document.getElementById('dribble-pl').value.trim();
+    const defense_pl = document.getElementById('defense-pl').value.trim();
+    const physique_pl = document.getElementById('physique-pl').value.trim();
+    const position_pl = document.getElementById('position-pl').value.trim();
+    const photo_pl = document.getElementById('photo-pl').value.trim();
+    const nationality_pl = document.getElementById('nationality-pl').value.trim();
+    const club_pl = document.getElementById('club-pl').value.trim();
 
-            if (
-                !notation_pl || !rythme_pl || !tir_pl || !passe_pl ||
-                !dribble_pl || !defense_pl || !physique_pl || 
-                !position_pl || !photo_pl || !nationality_pl || !club_pl || !name_pl
-            ) {
-                alert('Vous devez remplir complètement les champs');
-                return; 
-            }
+    if (
+        !name_pl || !notation_pl || !rythme_pl || !tir_pl || !passe_pl ||
+        !dribble_pl || !defense_pl || !physique_pl ||
+        !position_pl || !photo_pl || !nationality_pl || !club_pl
+    ) {
+        alert('يرجى ملء جميع الحقول قبل الإرسال!');
+        return;
+    }
 
-            card_play_chan.innerHTML=`
-            <div id="blue" >
-               <img src="${photo_pl}" style="width:6em;margin: 10px 0px 1px 25px;"><br>
-                    <span id="total-player" style="width:6em;margin-left: 39px;">${notation_pl}</span>
-                    <span id="position"style="width:6em;margin-left: 16px;"">${position_pl}</span>
-                 <div class="flag-club_pl">
-                         <span class="flag">
-                         <img src="${nationality_pl}" style="width: 24px;height: 24px; margin-left:41px;">
-                         </span>
-                         <span class="club">
-                         <img src="${club_pl}" style="width:6em;width: 24px;height: 24px;">
-                         </span>
-                       </div>
-               <div class="statistiques_pl">
-                    <span class="statistique-un">rythme<span class="rythme"> ${rythme_pl}</span></span>
-                    <span class="statistique-deux">tir <span class="tir"> ${tir_pl}</span></span>
-                    <span class="statistique-trois">passe <span class="passe"> ${passe_pl}</span></span><br>
-                    <span class="statistique-quatre">dribble<span class="dribble"> ${dribble_pl}</span></span>
-                    <span class="statistique-cinq">defense <span class="defense"> ${defense_pl}</span></span><br>
-                    <span class="statistique-six">physique<span class="physique"> ${physique_pl}</span></span>
-                </div>
-                <p style="margin-left:41px;">${name_pl}</p>
-            </div>
-                 <button style="background:red" class="supp_pl" >Suprimé</button>
-                 <button style="background:green" class="add_pl" >Ajouter</button>
-           `;       
-           counChangment.appendChild(card_play_chan);
-        });
-           
+    const card_play_chan = document.createElement('div');
+    card_play_chan.className = "card-player_pl";
+    card_play_chan.innerHTML = `
+        <div id="blue">
+           <img src="${photo_pl}" alt="${name_pl}" style="width:6em; margin: 10px 0px 1px 25px;"><br>
+           <span id="total-player" style="width:6em; margin-left: 39px;">${notation_pl}</span>
+           <span id="position" style="width:6em; margin-left: 16px;">${position_pl}</span>
+           <div class="flag-club_pl">
+               <span class="flag">
+                   <img src="${nationality_pl}" style="width: 24px; height: 24px; margin-left:41px;">
+               </span>
+               <span class="club">
+                   <img src="${club_pl}" style="width: 24px; height: 24px;">
+               </span>
+           </div>
+           <div class="statistiques_pl">
+               <span class="statistique-un">Rythme: <span class="rythme">${rythme_pl}</span></span><br>
+               <span class="statistique-deux">Tir: <span class="tir">${tir_pl}</span></span><br>
+               <span class="statistique-trois">Passe: <span class="passe">${passe_pl}</span></span><br>
+               <span class="statistique-quatre">Dribble: <span class="dribble">${dribble_pl}</span></span><br>
+               <span class="statistique-cinq">Défense: <span class="defense">${defense_pl}</span></span><br>
+               <span class="statistique-six">Physique: <span class="physique">${physique_pl}</span></span>
+           </div>
+           <p style="margin-left:41px;">${name_pl}</p>
+        </div>
+        <button style="background:red" class="supp_pl">Supprimer</button>
+        <button style="background:green" class="add_pl">Ajouter</button>
+    `;
+    document.querySelector('.changment').appendChild(card_play_chan);
+
+    const supp_pl = card_play_chan.querySelector('.supp_pl');
+    supp_pl.addEventListener('click', () => {
+        card_play_chan.remove();
     });
-    
 
-   
+    const add_pl = card_play_chan.querySelector('.add_pl');
+    add_pl.addEventListener('click', () => {
+        alert(`${name_pl} etait ajouter`);
+    });
+});
 
-
-
-
-
-
-
-
-
-
-
-
- 
+});

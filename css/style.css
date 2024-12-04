@@ -244,3 +244,13 @@ form {
   background-color:rgb(0, 255, 30);
   border-radius:2em;
 }
+.supp_pl,.add_pl{
+border:none;
+border-radius:1em;
+margin-bottom:1em;
+margin-left:1em;
+cursor: pointer;
+}
+#blue{
+  margin-left:2em;
+}
