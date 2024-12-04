@@ -685,6 +685,7 @@ ajoute.addEventListener('click', () => {
         }            
         subinfo.addEventListener('click',function(event) {
             event.preventDefault();
+            let name_pl=document.getElementById('name_pl').value
             let notation_pl=document.getElementById('notation-pl').value;
             let rythme_pl=document.getElementById('rythme-pl').value;
             let tir_pl=document.getElementById('tir-pl').value;
@@ -698,19 +699,27 @@ ajoute.addEventListener('click', () => {
             let club_pl = document.getElementById('club-pl').value;
 
             let card_play_chan=document.createElement('div');
+
+            if (
+                !notation_pl || !rythme_pl || !tir_pl || !passe_pl ||
+                !dribble_pl || !defense_pl || !physique_pl || 
+                !position_pl || !photo_pl || !nationality_pl || !club_pl || !name_pl
+            ) {
+                alert('Vous devez remplir complètement les champs');
+                return; 
+            }
+
             card_play_chan.innerHTML=`
-             <div class="card-player" >
-               <img src="${photo_pl}" style="width:6em;position:absolute;left:37px;">
-               <div class="post-total">
-                    <span id="total-player" style="width:6em;position:absolute;top:260px;left:45px;">${notation_pl}</span><br>
-                    <span id="position"style="width:6em;position:absolute;top:280px;left:45px;">${position_pl}</span>
-                </div>
-                 <div class="flag-club">
+            <div id="blue" >
+               <img src="${photo_pl}" style="width:6em;margin: 10px 0px 1px 25px;"><br>
+                    <span id="total-player" style="width:6em;margin-left: 39px;">${notation_pl}</span>
+                    <span id="position"style="width:6em;margin-left: 16px;"">${position_pl}</span>
+                 <div class="flag-club_pl">
                          <span class="flag">
-                         <img src="${nationality_pl}" style="width:6em;position:absolute;top:270px;left:44px;width: 24px;height: 24px;">
+                         <img src="${nationality_pl}" style="width: 24px;height: 24px; margin-left:41px;">
                          </span>
                          <span class="club">
-                         <img src="${club_pl}" style="width:6em;position:absolute;top:290px;left: 44px;width: 24px;height: 24px;">
+                         <img src="${club_pl}" style="width:6em;width: 24px;height: 24px;">
                          </span>
                        </div>
                <div class="statistiques_pl">
@@ -721,10 +730,11 @@ ajoute.addEventListener('click', () => {
                     <span class="statistique-cinq">defense <span class="defense"> ${defense_pl}</span></span><br>
                     <span class="statistique-six">physique<span class="physique"> ${physique_pl}</span></span>
                 </div>
-             </div>
-                 <button style="background:red" class="supp" id="${IDE}">Suprimé</button>
-                 <button style="background:red" class="add" id="${IDE}">Ajouter</button>
-           `; 
+                <p style="margin-left:41px;">${name_pl}</p>
+            </div>
+                 <button style="background:red" class="supp_pl" >Suprimé</button>
+                 <button style="background:green" class="add_pl" >Ajouter</button>
+           `;       
            counChangment.appendChild(card_play_chan);
         });
            
