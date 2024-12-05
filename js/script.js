@@ -686,25 +686,25 @@ ajoute.addEventListener('click', () => {
 document.getElementById('subinfo').addEventListener('click', function (event) {
     event.preventDefault();
 
-    const name_pl = document.getElementById('name_pl').value.trim();
-    const notation_pl = document.getElementById('notation-pl').value.trim();
-    const rythme_pl = document.getElementById('rythme-pl').value.trim();
-    const tir_pl = document.getElementById('tir-pl').value.trim();
-    const passe_pl = document.getElementById('passe-pl').value.trim();
-    const dribble_pl = document.getElementById('dribble-pl').value.trim();
-    const defense_pl = document.getElementById('defense-pl').value.trim();
-    const physique_pl = document.getElementById('physique-pl').value.trim();
-    const position_pl = document.getElementById('position-pl').value.trim();
-    const photo_pl = document.getElementById('photo-pl').value.trim();
-    const nationality_pl = document.getElementById('nationality-pl').value.trim();
-    const club_pl = document.getElementById('club-pl').value.trim();
+    const name_pl = document.getElementById('name_pl').value;
+    const notation_pl = document.getElementById('notation-pl').value;
+    const rythme_pl = document.getElementById('rythme-pl').value;
+    const tir_pl = document.getElementById('tir-pl').value;
+    const passe_pl = document.getElementById('passe-pl').value;
+    const dribble_pl = document.getElementById('dribble-pl').value;
+    const defense_pl = document.getElementById('defense-pl').value;
+    const physique_pl = document.getElementById('physique-pl').value;
+    const position_pl = document.getElementById('position-pl').value;
+    const photo_pl = document.getElementById('photo-pl').value;
+    const nationality_pl = document.getElementById('nationality-pl').value;
+    const club_pl = document.getElementById('club-pl').value;
 
     if (
         !name_pl || !notation_pl || !rythme_pl || !tir_pl || !passe_pl ||
         !dribble_pl || !defense_pl || !physique_pl ||
         !position_pl || !photo_pl || !nationality_pl || !club_pl
     ) {
-        alert('يرجى ملء جميع الحقول قبل الإرسال!');
+        alert('error');
         return;
     }
 
@@ -750,3 +750,27 @@ document.getElementById('subinfo').addEventListener('click', function (event) {
 });
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
